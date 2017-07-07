@@ -97,6 +97,20 @@ describe('integration tests', function () {
 
         });
 
+        describe('ne', function () {
+
+          it('should filter using <> operator', function () {
+            return objectionFind(Person)
+              .build({
+                "firstName:ne": "F06",
+              })
+              .then(function (result) {
+                expect(_.invokeMap(result, 'fullName').sort()).to.eql(['F00 L09', 'F01 L08', 'F02 L07', 'F03 L06', 'F04 L05', 'F05 L04', 'F07 L02', 'F08 L01', 'F09 L00']);
+              });
+          });
+
+        });
+
         describe('lt', function () {
 
           it('should filter using < operator', function () {
