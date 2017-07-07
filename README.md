@@ -142,14 +142,14 @@ Filter can also be a custom filter registered using the `registerFilter` method.
 The following examples explain how filter parameters work. For the examples, assume we have an objection.js model
 `Person` that has a one-to-one relation `parent`, a many-to-many relation `movies` and one-to-many relation `children`.
 
-| Filter query parameter             | Explanation                                                                                             |
-|------------------------------------|---------------------------------------------------------------------------------------------------------|
-| `firstName=Jennifer`               | Returns all Persons whose first name is 'Jennifer'.                                                     |
-| `firstName:eq=Jennifer`            | Returns all Persons whose first name is 'Jennifer'.                                                     |
-| `children.firstName:like=%rad%`    | Returns all Persons who have at least one child whose first name contains 'rad'.                        |
-| `lastName|movies.name:like=%Gump%` | Returns all Persons whose last name contains 'Gump' or who acted in a movie whose name contains 'Gump'. |
-| `parent.age:lt=60`                 | Returns all persons whose parent's age is less than 60.                                                 |
-| `parent.age:in=20,22,24`           | Returns all persons whose parent's age is 20, 22 or 24.                                                 |
+| Filter query parameter                  | Explanation                                                                                             |
+|-----------------------------------------|---------------------------------------------------------------------------------------------------------|
+| `firstName=Jennifer`                    | Returns all Persons whose first name is 'Jennifer'.                                                     |
+| `firstName:eq=Jennifer`                 | Returns all Persons whose first name is 'Jennifer'.                                                     |
+| `children.firstName:like=%rad%`         | Returns all Persons who have at least one child whose first name contains 'rad'.                        |
+| `lastName⎮movies.name:like=%Gump%`      | Returns all Persons whose last name contains 'Gump' or who acted in a movie whose name contains 'Gump'. |
+| `parent.age:lt=60`                      | Returns all persons whose parent's age is less than 60.                                                 |
+| `parent.age:in=20,22,24`                | Returns all persons whose parent's age is 20, 22 or 24.                                                 |
 
 Filters are joined with `AND` operator so for example the query string:
 
